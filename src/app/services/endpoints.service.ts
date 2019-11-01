@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClient } from '@angular/common/http';
 
+@Injectable({ providedIn: 'root' })
+export class ServiceNameService {
+  constructor(private httpClient: HttpClient) { }
+
+}
 @Injectable({
   providedIn: 'root'
 })
 export class EndpointsService {
   // private DebugCORSproxyUrl = "https://ancient-hamlet-78673.herokuapp.com/";
   // private baseURL = this.DebugCORSproxyUrl + "https://er7ys4w8ch.execute-api.us-west-2.amazonaws.com/prod/web/";
-  private baseURL = "http://localhost:3000/api";
+  private baseURL = "http://localhost:3000";
 
 
   // private baseURL = "https://er7ys4w8ch.execute-api.us-west-2.amazonaws.com/dev";

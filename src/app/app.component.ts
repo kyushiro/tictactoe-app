@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SocketService } from './services/socket.service';
+// import { SocketService } from './services/socket.service';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +9,14 @@ import { SocketService } from './services/socket.service';
 export class AppComponent {
   title = 'tictactoe-app';
 
-  constructor(private socket: SocketService) {
-    this.socket.getMessage().subscribe(x => {
-      console.log("this is a socket msg", x);
-    })
+  constructor() {
+    // this.socket.getMessage().subscribe(x => {
+    //   console.log("this is a socket msg", x);
+    // })
   }
 
   ngOnInit() {
-    this.socket.sendMessage("asdf");
+    // this.socket.sendMessage("asdf");
   }
 
 }

@@ -1,0 +1,9 @@
+<p>Game #{{game}} </p>
+
+<div>
+  <table>
+    <tr *ngFor="let row of gamegrid; let ir = index">
+      <td *ngFor="let col of row; let ic = index" (click)="move(ir,ic)">{{gamegrid[ir][ic]}}</td>
+    </tr>
+  </table>
+</div>
