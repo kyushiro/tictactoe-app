@@ -30,6 +30,8 @@ export class PlayComponent implements OnInit {
     console.log(`x is ${x} y is ${y}`);
     if (!isNull(this.gamegrid[y][x])) return;
     this.gamegrid[y][x] = "o";
+
+
   }
 
 }
