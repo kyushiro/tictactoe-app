@@ -1,1 +1,8 @@
-<p>list works!</p>
+<div class="container">
+  <table>
+    <tr *ngFor="let item of list.games">
+      <td>Game {{item.game_ref}} Started on {{item.game_start}}</td>
+      <td><button (click)="replay(item)">Replay</button></td>
+    </tr>
+  </table>
+</div>
