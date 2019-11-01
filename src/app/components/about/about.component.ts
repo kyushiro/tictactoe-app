@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EndpointsService } from 'src/app/services/endpoints.service';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  data;
+  constructor(public endpts: EndpointsService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.data = await this.endpts.request("about", "get").toPromise();
   }
 
 }
