@@ -16,10 +16,19 @@ export class PlayComponent implements OnInit {
     [null, null, null],
     [null, null, null]
   ];
-  constructor(
-    public endpts: EndpointsService,
-    private socket: SocketService
-  ) { }
+
+  message = "";
+  constructor(public endpts: EndpointsService, private socket: SocketService) {
+    this.socket.getMessage().subscribe((x: any) => {
+      console.log("this is a socket msg", x);
+      this.gamegrid = x.board;
+      if (x.win.win) {
+        this.message = x.win.sign + " Wins!";
+      } else if (x.fullBoard) {
+        this.message = "Match Draw";
+      }
+    })
+  }
 
   async ngOnInit() {
     this.game = (await this.endpts.request("create-game", "get").toPromise()).game;
@@ -30,6 +39,11 @@ export class PlayComponent implements OnInit {
     console.log(`x is ${x} y is ${y}`);
     if (!isNull(this.gamegrid[y][x])) return;
     this.gamegrid[y][x] = "o";
+    let obj = {
+      ref: this.game,
+      board: this.gamegrid
+    };
+    this.socket.sendMessage(JSON.stringify(obj));
 
 
   }

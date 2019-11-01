@@ -1,0 +1,10 @@
+.button {
+  cursor: pointer;
+  display: inline-block;
+  border: 1px inset gray;
+  margin-right: 1.5em;
+}
+
+.button:hover {
+  border: 1px outset gray;
+}
