@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import * as Pages from './components/index';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { PlayComponent } from './components/play/play.component';
+import { ReplayComponent } from './components/replay/replay.component';
+import { ListComponent } from './components/list/list.component';
 
-let pageKeys = Object.keys(Pages);
-let pathKeys = {};
-pageKeys.map(x => { pathKeys[x] = pascalToDash(x.split("Component")[0]) });
-
-const routes: Routes = [];
-pageKeys.map(k => {
-  routes.push({ path: pathKeys[k], component: Pages[k] });
-});
-routes.push({ path: '', component: Pages.HomeComponent });
-
-function pascalToDash(str) {
-  return str.replace(/\W+/g, '-').replace(/([a-z\d])([A-Z])/g, '$1-$2').toLowerCase()
-}
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'play', component: PlayComponent },
+  { path: 'replay', component: ReplayComponent },
+  { path: 'list', component: ListComponent },
+  { path: '', component: HomeComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
