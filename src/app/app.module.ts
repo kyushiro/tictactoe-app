@@ -13,7 +13,7 @@ import { ListComponent } from './components/list/list.component';
 import { ReplayComponent } from './components/replay/replay.component';
 import { AboutComponent } from './components/about/about.component';
 
-const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
+const config: SocketIoConfig = { url: 'https://api-roam-tictactoe.herokuapp.com', options: {} };
 
 @NgModule({
   declarations: [

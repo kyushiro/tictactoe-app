@@ -10,9 +10,9 @@ export class ServiceNameService {
   providedIn: 'root'
 })
 export class EndpointsService {
-  // private DebugCORSproxyUrl = "https://ancient-hamlet-78673.herokuapp.com/";
-  // private baseURL = this.DebugCORSproxyUrl + "https://er7ys4w8ch.execute-api.us-west-2.amazonaws.com/prod/web/";
-  private baseURL = "http://localhost:3000";
+  private DebugCORSproxyUrl = "https://ancient-hamlet-78673.herokuapp.com/";
+  private baseURL = "https://api-roam-tictactoe.herokuapp.com";
+  // private baseURL = "http://localhost:3000";
 
 
   // private baseURL = "https://er7ys4w8ch.execute-api.us-west-2.amazonaws.com/dev";
